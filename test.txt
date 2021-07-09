@@ -1,0 +1,2 @@
+Just for testing whether the
+cmmnd prompt is working fine
