@@ -7,7 +7,7 @@ pipeline{
     // }
 
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32;C:\Users\wadhw\AppData\Local\Programs\Python\Python39\Scripts\"
+        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\wadhw\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\"
     }
    
     parameters {
