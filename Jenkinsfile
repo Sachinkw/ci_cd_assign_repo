@@ -1,5 +1,9 @@
 pipeline{
-    agent none
+    agent{
+        docker{
+            image 'python:2-alpine'
+        }
+    }
 
     parameters {
         string(name: "num_1", defaultValue: "0", description:"Enter First Value")
@@ -9,29 +13,14 @@ pipeline{
 
     stages{
         stage("UnitTest"){
-            agent{
-                docker{
-                    image 'qnib/pytest'
-                }
-            }
             steps{
-                bat 'py.test --verbose --junit-xml test-reports/results.xml sources/tests.py'
-            }
-            post{
-                always{
-                    junit 'test-reports/results.xml'
-                }
+                python sources/tests.py
             }
         }
 
         stage("Build"){
-            agent{
-                docker{
-                    image 'python:2-alpine'
-                }
-            }
             steps{
-                bat 'python sources/main.py --x %num_1% --y %num_2% --o %operator%'
+                python sources/main.py --x %num_1% --y %num_2% --o %operator%
                 // bat 'python -m py_compile sources/add2vals.py sources/c.py'
                 // stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
