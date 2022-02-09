@@ -12,6 +12,12 @@ pipeline{
     }
 
     stages{
+        stage("Checkout"){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sachinkw/ci_cd_assign_repo.git']]])
+            }
+        }
+
         stage("UnitTest"){
             steps{
                 git 'https://github.com/Sachinkw/ci_cd_assign_repo.git'
