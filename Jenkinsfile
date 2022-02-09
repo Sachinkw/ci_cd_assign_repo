@@ -1,16 +1,9 @@
 pipeline{
-    agent any
-    // {
-    //     docker{
-    //         image 'python:2-alpine'
-    //     }
-    // }
-    tools{
-        python 'python'
+    agent {
+        agent { docker { image 'python:3.9.6' } }
     }
-
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\wadhw\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\"
+        PATH = "C:\\WINDOWS\\SYSTEM32"
     }
    
     parameters {
