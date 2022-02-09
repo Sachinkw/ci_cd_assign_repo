@@ -14,20 +14,20 @@ pipeline{
     stages{
         stage("Checkout"){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sachinkw/ci_cd_assign_repo.git']]])
+                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'a47942f3-397b-4782-b472-4d1d9a28d682', url: 'https://github.com/Sachinkw/ci_cd_assign_repo.git']]]
             }
         }
 
         stage("UnitTest"){
             steps{
-                git 'https://github.com/Sachinkw/ci_cd_assign_repo.git'
+                git credentialsId: 'a47942f3-397b-4782-b472-4d1d9a28d682', url: 'https://github.com/Sachinkw/ci_cd_assign_repo.git'
                 bat 'python sources/test.py'
             }
         }
 
         stage("Build"){
             steps{
-                git 'https://github.com/Sachinkw/ci_cd_assign_repo.git'
+                git credentialsId: 'a47942f3-397b-4782-b472-4d1d9a28d682', url: 'https://github.com/Sachinkw/ci_cd_assign_repo.git'
                 bat 'python sources/main.py --x %num1% --y %num2% --o %operator%'
                 
                 // bat 'python -m py_compile sources/add2vals.py sources/c.py'
