@@ -6,10 +6,6 @@ pipeline{
     //     }
     // }
 
-    environment {
-       env.PATH = env.PATH + ";c:\\Windows\\System32"
-   }
-   
     parameters {
         string(name: "num_1", defaultValue: "0", description:"Enter First Value")
         string(name: "num_2", defaultValue: "0", description:"Enter Second Value")
