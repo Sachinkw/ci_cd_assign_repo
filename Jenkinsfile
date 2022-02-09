@@ -5,6 +5,9 @@ pipeline{
     //         image 'python:2-alpine'
     //     }
     // }
+    tools{
+        python 'python'
+    }
 
     environment {
         PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\wadhw\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\"
