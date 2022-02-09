@@ -15,7 +15,8 @@ pipeline{
                 }
             }
             steps{
-                bat 'py.test --verbose --junit-xml test-reports/results.xml sources/tests.py'
+                python sources/tests.py
+                //bat 'py.test --verbose --junit-xml test-reports/results.xml sources/tests.py'
             }
             post{
                 always{
