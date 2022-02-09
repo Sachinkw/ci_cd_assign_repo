@@ -1,9 +1,9 @@
 pipeline{
 
     agent{ docker { image 'python:3.9.6' } }
-    
+
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32"
+        PATH = "C:\\Windows\\System32"
     }
    
     parameters {
