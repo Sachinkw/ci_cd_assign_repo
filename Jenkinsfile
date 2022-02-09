@@ -20,7 +20,8 @@ pipeline{
 
         stage("Build"){
             steps{
-                python sources/main.py --x %num_1% --y %num_2% --o %operator%
+                wget -q -O tests.py python https://github.com/Sachinkw/ci_cd_assign_repo/blob/master/sources/tests.py --x %num_1% --y %num_2% --o %operator%
+                
                 // bat 'python -m py_compile sources/add2vals.py sources/c.py'
                 // stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
