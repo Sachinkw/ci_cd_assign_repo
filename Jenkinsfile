@@ -1,9 +1,10 @@
 pipeline{
-    agent{
-        docker{
-            image 'python:2-alpine'
-        }
-    }
+    agent any
+    // {
+    //     docker{
+    //         image 'python:2-alpine'
+    //     }
+    // }
 
     parameters {
         string(name: "num_1", defaultValue: "0", description:"Enter First Value")
