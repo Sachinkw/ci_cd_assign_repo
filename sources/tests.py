@@ -21,7 +21,7 @@ class TestCalc(unittest.TestCase):
     def test_multiply(self):
         self.assertEqual(multiply(5,-9.0), -45)
         self.assertEqual(multiply(-2,0), 0)
-        self.assertEqual(multiply("a",6), "aaaaaa")
+        self.assertRaises(TypeError, multiply, "a", 6)
         self.assertRaises(TypeError, multiply, "a", "o")
 
 
