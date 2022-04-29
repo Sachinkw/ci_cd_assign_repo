@@ -7,7 +7,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(add(5,10), 15)
         self.assertEqual(add(-2,2), 0)
         self.assertEqual(add(-1,-5), -6)
-        self.assertEqual(add(a,-5), "a-5")
+        self.assertEqual(add("a",-5), "a-5")
 
 
     def test_substract(self):
