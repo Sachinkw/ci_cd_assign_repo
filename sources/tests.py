@@ -7,14 +7,14 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(add(5,10), 15)
         self.assertEqual(add(-2,2), 0)
         self.assertEqual(add(-1,-5), -6)
-        self.assertEqual(add("a",-5), "a-5")
+        self.assertEqual(add("a",-5), "a-5.0")
 
 
     def test_substract(self):
         self.assertEqual(substract(5,-10), 15)
         self.assertEqual(substract(-2,-2), 0)
         self.assertEqual(substract(1,5), -4)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             substract("a",5)
 
 
@@ -22,7 +22,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(multiply(5,-9.0), -45)
         self.assertEqual(multiply(-2,0), 0)
         self.assertEqual(multiply("a",6), "aaaaaa")
-        self.assertRaises(ValueError, multiply, "a", "o")
+        self.assertRaises(TypeError, multiply, "a", "o")
 
 
 
