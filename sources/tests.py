@@ -1,5 +1,5 @@
 import unittest
-from calculator import add, substract, multiply
+from sources.calculator import add, substract, multiply
 
 class TestCalc(unittest.TestCase):
 
